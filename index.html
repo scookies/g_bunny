@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bunny Meadow</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="hud">
+        <h1>Bunny Meadow</h1>
+        <p>Click the meadow to walk. Gather fruit, chop trees, and upgrade the hutch.</p>
+        <div class="inventory" aria-label="Inventory"><span>Fruit <b id="fruit-count">0</b></span><span>Wood <b id="wood-count">0</b></span><span>Money <b id="money-count">$0</b></span><span class="axe" id="equipped-axe">👐 No axe</span></div>
+        <div class="progress">Hutch <span id="hutch-level">1</span>/5 · Bunny feed <span id="feed-progress">0</span></div>
+        <button id="rebirth-button" hidden>Rebirth</button>
+      </header>
+
+      <section id="world" aria-label="Woodland meadow game world">
+        <div id="shop" aria-label="Meadow shop stall"><div class="shop-awning"></div><div class="shop-seller">🙂</div><strong>Meadow Shop</strong><span>Basic Axe · $5</span><span>Bronze Axe · $10</span></div>
+        <div id="exchange" aria-label="Exchange store stall"><div class="exchange-awning"></div><div class="exchange-seller">🙂</div><strong>Exchange</strong><span>Fruit · $1</span><span>Wood · $2</span></div>
+        <button class="tree tree-one" aria-label="Chop this tree"></button><button class="tree tree-two" aria-label="Chop this tree"></button><button class="tree tree-three" aria-label="Chop this tree"></button>
+        <div class="wildflowers flowers-one">✿</div><div class="wildflowers flowers-two">✿</div>
+        <div class="pond"><span>water</span></div>
+
+        <div id="hutch" aria-label="Upgrade bunny hutch with 3 wood" role="button" tabindex="0">
+          <div class="roof"></div><div class="hutch-door"></div>
+          <span class="hutch-sign">Bunny Hutch Level 1</span>
+          <button id="bunny" aria-label="Feed the bunny"><i class="ear left-ear"></i><i class="ear right-ear"></i><i class="bunny-face">•ᴗ•</i></button>
+        </div>
+
+        <button class="fruit berry" style="left: 18%; top: 31%;" aria-label="Pick a berry">●</button>
+        <button class="fruit apple" style="left: 67%; top: 22%;" aria-label="Pick an apple">●</button>
+        <button class="fruit berry" style="left: 78%; top: 60%;" aria-label="Pick a berry">●</button>
+        <button class="fruit pear" style="left: 70%; top: 72%;" aria-label="Pick a pear">●</button>
+
+        <div id="caretaker" aria-label="Caretaker"><span class="head"></span><span class="body"></span></div>
+        <div id="speech" role="status"></div>
+        <section id="shop-menu" class="store-menu" hidden aria-label="Meadow shop">
+          <button class="close-menu" aria-label="Close shop">×</button><h2>Meadow Shop</h2>
+          <div class="product"><span class="axe-picture">🪓</span><span>Basic Axe<br><small>$5 · 3 chops/tree</small></span><button class="buy-button" data-axe="Basic Axe" data-price="5">Buy</button></div>
+          <div class="product"><span class="axe-picture bronze">🪓</span><span>Bronze Axe<br><small>$10 · 1 chop/tree</small></span><button class="buy-button" data-axe="Bronze Axe" data-price="10">Buy</button></div>
+        </section>
+        <section id="exchange-menu" class="store-menu" hidden aria-label="Exchange store">
+          <button class="close-menu" aria-label="Close exchange">×</button><h2>Exchange Store</h2>
+          <p>Sell what you have gathered.</p><div class="product"><span>Fruit · $1 each</span><button id="sell-fruit" class="buy-button">Sell</button></div><div class="product"><span>Wood · $2 each</span><button id="sell-wood" class="buy-button">Sell</button></div>
+        </section>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
